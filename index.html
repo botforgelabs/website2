@@ -1,216 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Future Lab</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background:#0f172a;
-color:white;
-line-height:1.6;
-}
-
-/* NAVBAR */
-
-nav{
-background:#020617;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-}
-
-nav h1{
-color:#38bdf8;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* HERO */
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero h2{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-.hero button{
-padding:15px 25px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:#38bdf8;
-cursor:pointer;
-}
-
-/* SECTIONS */
-
-section{
-padding:80px 10%;
-}
-
-.section-title{
-font-size:2.5rem;
-margin-bottom:30px;
-color:#38bdf8;
-}
-
-/* PROJECT GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:#020617;
-padding:30px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:40px;
-background:#020617;
-margin-top:40px;
-}
-
-</style>
+<title>Endless Universe</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <nav>
-<h1>Future Lab</h1>
+<h1>Endless Universe</h1>
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div class="links">
+<a href="index.html">Home</a>
+<a href="backrooms.html">Backrooms</a>
+</div>
 </nav>
 
+<header>
+<h2>An Endless Website</h2>
+<p>Scroll forever. The website keeps creating new worlds.</p>
+</header>
 
-<div class="hero">
+<div id="content"></div>
 
-<h2>Welcome to the Future</h2>
-<p>A place for experiments, robots, and strange ideas.</p>
-
-<br>
-
-<button onclick="hello()">Click Me</button>
-
-</div>
-
-
-<section id="about">
-
-<h2 class="section-title">About</h2>
-
-<p>
-This website is a digital laboratory. Think of it as a control room where
-ideas about robotics, physics, programming, and exploration live. The internet
-is basically a giant machine made of servers, cables, and protocols that move
-information around the planet at nearly the speed of light.
-</p>
-
-</section>
-
-
-<section id="projects">
-
-<h2 class="section-title">Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Robot AI</h3>
-<p>Building intelligent machines that can learn and interact.</p>
-</div>
-
-<div class="card">
-<h3>Space Simulation</h3>
-<p>Modeling black holes, stars, and strange cosmic physics.</p>
-</div>
-
-<div class="card">
-<h3>Game Development</h3>
-<p>Creating worlds where players can explore and build.</p>
-</div>
-
-<div class="card">
-<h3>Future Tech</h3>
-<p>Experimenting with new technologies and crazy ideas.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<p>Email: futurelab@example.com</p>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Future Lab</p>
-
-</footer>
-
-
-<script>
-
-function hello(){
-alert("Welcome to the Future Lab 🚀");
-}
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>
