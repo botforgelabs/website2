@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Energy Simulator</title>
+
+<style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+margin:0;
+}
+
+nav{
+background:#020617;
+padding:20px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+}
+
+.container{
+padding:40px;
+}
+
+input{
+width:200px;
+}
+
+canvas{
+background:#111827;
+border:2px solid #38bdf8;
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="energy.html">Energy</a>
+<a href="simulation.html">Simulation</a>
+<a href="backrooms.html">Backrooms</a>
+</nav>
+
+<div class="container">
+
+<h1>Energy Simulator</h1>
+<p>Adjust the sliders and watch the energy change.</p>
+
+<br>
+
+<label>Mass (kg)</label>
+<br>
+<input type="range" id="mass" min="1" max="50" value="10">
+
+<br><br>
+
+<label>Height (m)</label>
+<br>
+<input type="range" id="height" min="0" max="100" value="50">
+
+<br><br>
+
+<label>Velocity (m/s)</label>
+<br>
+<input type="range" id="velocity" min="0" max="50" value="10">
+
+<h2 id="pe"></h2>
+<h2 id="ke"></h2>
+
+<canvas id="sim" width="500" height="300"></canvas>
+
+</div>
+
+<script>
+
+let canvas = document.getElementById("sim")
+let ctx = canvas.getContext("2d")
+
+function update(){
+
+let m = document.getElementById("mass").value
+let h = document.getElementById("height").value
+let v = document.getElementById("velocity").value
+
+let g = 9.8
+
+let PE = m * g * h
+let KE = 0.5 * m * v * v
+
+document.getElementById("pe").innerText = "Potential Energy: " + PE.toFixed(2) + " J"
+document.getElementById("ke").innerText = "Kinetic Energy: " + KE.toFixed(2) + " J"
+
+ctx.clearRect(0,0,500,300)
+
+let y = 250 - (h*2)
+
+ctx.fillStyle = "#38bdf8"
+ctx.beginPath()
+ctx.arc(250,y,20,0,Math.PI*2)
+ctx.fill()
+
+}
+
+document.querySelectorAll("input").forEach(i=>{
+i.addEventListener("input",update)
+})
+
+update()
+
+</script>
+
+</body>
+</html>
